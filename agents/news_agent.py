@@ -1,58 +1,103 @@
-"""News Analysis Agent — analyzes Thai and international news impact on stocks."""
+"""News Analysis Agent — fetches and analyzes news via Search Center API."""
 
 import argparse
 import json
 import logging
+import sys
 from datetime import datetime
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from scrapers.search_center_client import search_news, search_posts
 
 logger = logging.getLogger(__name__)
 
 
-def analyze_news(symbol: str) -> dict:
-    """Fetch and analyze news for a SET stock.
+def analyze_news(symbol: str, days: int = 7) -> dict:
+    """Fetch and analyze news for a SET stock via Search Center API.
 
     Args:
         symbol: SET ticker symbol (e.g., 'PTT')
+        days: Number of days to look back
 
     Returns:
-        Dict with news items and impact assessment.
+        Dict with news articles and impact assessment.
     """
-    from scrapers.news_scraper import NewsScraper
+    logger.info("Fetching news for %s (last %d days)...", symbol, days)
 
-    scraper = NewsScraper()
-    articles = scraper.fetch(symbol)
-
-    if not articles:
+    try:
+        news_data = search_news(symbol, days=days, limit=20)
+    except Exception as e:
+        logger.error("Failed to fetch news: %s", e)
         return {
             "symbol": symbol,
             "news_count": 0,
-            "impact_score": 0.0,
             "articles": [],
-            "note": "No recent news found",
+            "note": f"Search Center API error: {e}",
         }
 
-    # Score each article's potential impact
-    scored_articles = []
-    for article in articles:
-        scored_articles.append({
-            "title": article["title"],
-            "source": article["source"],
-            "date": article["date"],
-            "url": article.get("url", ""),
-            "summary": article.get("summary", ""),
+    if not news_data.get("success"):
+        return {
+            "symbol": symbol,
+            "news_count": 0,
+            "articles": [],
+            "note": "No news data returned",
+        }
+
+    articles = []
+    for post in news_data.get("data", []):
+        articles.append({
+            "title": post.get("content", "")[:200],
+            "source": post.get("domain", ""),
+            "channel": post.get("channel", "news"),
+            "date": post.get("date", ""),
+            "url": post.get("url", ""),
+            "sentiment": post.get("sentiment", "neutral"),
+            "engagement": post.get("engagement", {}),
         })
+
+    # Also fetch webboard discussions (Pantip etc.)
+    try:
+        webboard_data = search_posts(
+            symbol, days=days, channels=["webboard"], sort_by="engagement", limit=10,
+        )
+        for post in webboard_data.get("data", []):
+            articles.append({
+                "title": post.get("content", "")[:200],
+                "source": post.get("domain", ""),
+                "channel": "webboard",
+                "date": post.get("date", ""),
+                "url": post.get("url", ""),
+                "sentiment": post.get("sentiment", "neutral"),
+                "engagement": post.get("engagement", {}),
+            })
+    except Exception:
+        pass
+
+    # Count sentiment in news
+    pos = sum(1 for a in articles if a["sentiment"] == "positive")
+    neg = sum(1 for a in articles if a["sentiment"] == "negative")
+    neu = sum(1 for a in articles if a["sentiment"] == "neutral")
 
     return {
         "symbol": symbol,
         "analyzed_at": datetime.now().isoformat(),
-        "news_count": len(scored_articles),
-        "articles": scored_articles,
+        "period_days": days,
+        "news_count": len(articles),
+        "news_sentiment": {
+            "positive": pos,
+            "neutral": neu,
+            "negative": neg,
+        },
+        "articles": articles,
     }
 
 
 def main():
     parser = argparse.ArgumentParser(description="News analysis for SET stocks")
     parser.add_argument("--symbol", required=True, help="Stock symbol (e.g., PTT)")
+    parser.add_argument("--days", type=int, default=7, help="Days to look back (default: 7)")
     args = parser.parse_args()
 
     logging.basicConfig(
@@ -60,8 +105,8 @@ def main():
         format="%(asctime)s [%(name)s] %(levelname)s: %(message)s",
     )
 
-    result = analyze_news(args.symbol)
-    print(json.dumps(result, ensure_ascii=False))
+    result = analyze_news(args.symbol, days=args.days)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

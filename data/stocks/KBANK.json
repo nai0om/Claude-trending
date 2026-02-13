@@ -30,6 +30,44 @@
       },
       "flags": ["Price above upper BB", "Volume 1.46x average"],
       "signal": "Bullish"
+    },
+    {
+      "date": "2026-02-13",
+      "scanned_at": "2026-02-13T16:30:00",
+      "price": {
+        "close": 197.5,
+        "change_pct": -0.5
+      },
+      "indicators": {
+        "rsi": 63.64,
+        "macd": 1.2049,
+        "macd_signal": 0.2392,
+        "macd_hist": 0.9657,
+        "bb_upper": 197.45,
+        "bb_middle": 191.0,
+        "bb_lower": 184.55
+      },
+      "volume": {
+        "latest": 4794656,
+        "avg_20d": 16498892,
+        "ratio": 0.29
+      },
+      "levels": {
+        "support": 187.0,
+        "resistance": 199.0
+      },
+      "sentiment": {
+        "total_mentions": 5555,
+        "score": 0.39,
+        "label": "Bullish",
+        "positive": 2360,
+        "neutral": 2997,
+        "negative": 198,
+        "engagement": 8734813,
+        "confidence": "High"
+      },
+      "flags": [],
+      "signal": "Buy"
     }
   ],
   "notes": [],

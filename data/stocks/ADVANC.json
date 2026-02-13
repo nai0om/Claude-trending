@@ -30,6 +30,44 @@
       },
       "flags": ["RSI overbought (74.44)", "Price above upper BB"],
       "signal": "Overbought"
+    },
+    {
+      "date": "2026-02-13",
+      "scanned_at": "2026-02-13T16:30:00",
+      "price": {
+        "close": 395.0,
+        "change_pct": 0.0
+      },
+      "indicators": {
+        "rsi": 77.91,
+        "macd": 16.2191,
+        "macd_signal": 13.3148,
+        "macd_hist": 2.9044,
+        "bb_upper": 398.10,
+        "bb_middle": 361.90,
+        "bb_lower": 325.70
+      },
+      "volume": {
+        "latest": 1187555,
+        "avg_20d": 8413612,
+        "ratio": 0.14
+      },
+      "levels": {
+        "support": 339.0,
+        "resistance": 396.0
+      },
+      "sentiment": {
+        "total_mentions": 13021,
+        "score": 0.18,
+        "label": "Neutral",
+        "positive": 2909,
+        "neutral": 9570,
+        "negative": 542,
+        "engagement": 8332311,
+        "confidence": "High"
+      },
+      "flags": ["RSI overbought (77.91)"],
+      "signal": "Hold — Overbought"
     }
   ],
   "notes": [],

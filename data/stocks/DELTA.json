@@ -30,6 +30,44 @@
       },
       "flags": [],
       "signal": "Bullish"
+    },
+    {
+      "date": "2026-02-13",
+      "scanned_at": "2026-02-13T16:30:00",
+      "price": {
+        "close": 221.0,
+        "change_pct": -1.34
+      },
+      "indicators": {
+        "rsi": 68.92,
+        "macd": 10.1458,
+        "macd_signal": 8.2683,
+        "macd_hist": 1.8775,
+        "bb_upper": 234.02,
+        "bb_middle": 203.47,
+        "bb_lower": 172.93
+      },
+      "volume": {
+        "latest": 2854171,
+        "avg_20d": 16780238,
+        "ratio": 0.17
+      },
+      "levels": {
+        "support": 165.50,
+        "resistance": 228.0
+      },
+      "sentiment": {
+        "total_mentions": 10951,
+        "score": 0.16,
+        "label": "Neutral",
+        "positive": 2378,
+        "neutral": 7954,
+        "negative": 619,
+        "engagement": 17556247,
+        "confidence": "High"
+      },
+      "flags": [],
+      "signal": "Buy on Pullback"
     }
   ],
   "notes": [],

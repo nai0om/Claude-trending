@@ -23,6 +23,7 @@ api_endpoints:
   sec_api: "https://api-portal.sec.or.th"
   settrade: "https://www.settrade.com"
   pantip: "https://pantip.com/forum/sinthorn"
+  search_center: "http://localhost:4344"
 
 data_retention:
   price_history_days: 365

@@ -30,6 +30,44 @@
       },
       "flags": ["RSI extreme overbought (89.83)", "Price above upper BB", "+4.46% intraday"],
       "signal": "Extreme Overbought"
+    },
+    {
+      "date": "2026-02-13",
+      "scanned_at": "2026-02-13T16:30:00",
+      "price": {
+        "close": 58.75,
+        "change_pct": 0.43
+      },
+      "indicators": {
+        "rsi": 91.53,
+        "macd": 3.4276,
+        "macd_signal": 2.3878,
+        "macd_hist": 1.0399,
+        "bb_upper": 58.13,
+        "bb_middle": 49.60,
+        "bb_lower": 41.07
+      },
+      "volume": {
+        "latest": 20055559,
+        "avg_20d": 44987642,
+        "ratio": 0.45
+      },
+      "levels": {
+        "support": 44.75,
+        "resistance": 59.50
+      },
+      "sentiment": {
+        "total_mentions": 9900,
+        "score": 0.13,
+        "label": "Neutral",
+        "positive": 2158,
+        "neutral": 6825,
+        "negative": 917,
+        "engagement": 9274541,
+        "confidence": "High"
+      },
+      "flags": ["RSI extreme overbought (91.53)", "Price above upper BB"],
+      "signal": "Hold — Take Profit"
     }
   ],
   "notes": [],

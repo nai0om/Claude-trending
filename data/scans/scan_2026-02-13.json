@@ -1,0 +1,45 @@
+{
+  "scan_date": "2026-02-13",
+  "scanned_at": "2026-02-13T16:30:00",
+  "market_sentiment": "Bullish but overheated — broad rally cooling, low volume profit-taking day",
+  "stocks_scanned": 10,
+  "overbought_count": 6,
+  "oversold_count": 0,
+  "all_macd_bullish": true,
+  "avg_rsi": 74.5,
+  "summary": [
+    {"symbol": "PTT",    "close": 35.75,  "rsi": 76.47, "macd_signal": "Bullish", "vol_ratio": 0.30, "mentions": 17970, "sentiment_score": 0.26, "sentiment_label": "Bullish",  "signal": "Hold — Overbought"},
+    {"symbol": "ADVANC", "close": 395.00, "rsi": 77.91, "macd_signal": "Bullish", "vol_ratio": 0.14, "mentions": 13021, "sentiment_score": 0.18, "sentiment_label": "Neutral",  "signal": "Hold — Overbought"},
+    {"symbol": "AOT",    "close": 57.00,  "rsi": 70.18, "macd_signal": "Bullish", "vol_ratio": 0.37, "mentions": 6791,  "sentiment_score": 0.39, "sentiment_label": "Bullish",  "signal": "Hold"},
+    {"symbol": "CPALL",  "close": 49.00,  "rsi": 93.10, "macd_signal": "Bullish", "vol_ratio": 0.27, "mentions": 6274,  "sentiment_score": 0.47, "sentiment_label": "Bullish",  "signal": "Hold — Take Profit"},
+    {"symbol": "GULF",   "close": 58.75,  "rsi": 91.53, "macd_signal": "Bullish", "vol_ratio": 0.45, "mentions": 9900,  "sentiment_score": 0.13, "sentiment_label": "Neutral",  "signal": "Hold — Take Profit"},
+    {"symbol": "KBANK",  "close": 197.50, "rsi": 63.64, "macd_signal": "Bullish", "vol_ratio": 0.29, "mentions": 5555,  "sentiment_score": 0.39, "sentiment_label": "Bullish",  "signal": "Buy"},
+    {"symbol": "SCB",    "close": 141.50, "rsi": 72.41, "macd_signal": "Bullish", "vol_ratio": 0.43, "mentions": 4207,  "sentiment_score": 0.31, "sentiment_label": "Bullish",  "signal": "Hold"},
+    {"symbol": "SCC",    "close": 220.00, "rsi": 56.10, "macd_signal": "Bullish", "vol_ratio": 0.36, "mentions": 1261,  "sentiment_score": 0.48, "sentiment_label": "Bullish",  "signal": "Buy"},
+    {"symbol": "BDMS",   "close": 21.60,  "rsi": 75.00, "macd_signal": "Bullish", "vol_ratio": 0.63, "mentions": 782,   "sentiment_score": 0.66, "sentiment_label": "Bullish",  "signal": "Hold — Overbought"},
+    {"symbol": "DELTA",  "close": 221.00, "rsi": 68.92, "macd_signal": "Bullish", "vol_ratio": 0.17, "mentions": 10951, "sentiment_score": 0.16, "sentiment_label": "Neutral",  "signal": "Buy on Pullback"}
+  ],
+  "flagged": {
+    "overbought": ["CPALL", "GULF", "ADVANC", "PTT", "BDMS", "SCB"],
+    "oversold": [],
+    "high_volume": [],
+    "price_breakout": ["GULF", "BDMS"],
+    "sentiment_bearish": [],
+    "sentiment_bullish": ["BDMS", "SCC", "CPALL"],
+    "mention_spike": []
+  },
+  "action_plan": {
+    "budget": 100000,
+    "buy": [
+      {"symbol": "SCC",   "amount": 22000, "score": 36, "reason": "RSI healthy 56, MACD bullish, sentiment 51% positive"},
+      {"symbol": "KBANK", "amount": 19750, "score": 31, "reason": "RSI 64 healthy, MACD crossover, sentiment 42% positive"}
+    ],
+    "buy_on_pullback": [
+      {"symbol": "DELTA", "target_price": "210-215", "reserved": 22100, "score": 28, "reason": "RSI 69, strong MACD, wait for BB Middle ~203"}
+    ],
+    "hold_take_profit": ["CPALL", "GULF"],
+    "hold": ["AOT", "BDMS", "ADVANC", "SCB", "PTT"],
+    "cash_remaining": 58250,
+    "cash_pct": 58.25
+  }
+}
