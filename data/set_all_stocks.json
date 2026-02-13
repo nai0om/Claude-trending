@@ -1,0 +1,1092 @@
+{
+  "fetched_at": "2026-02-13T11:30:10.210092",
+  "count": 155,
+  "source": "set.or.th",
+  "stocks": [
+    {
+      "symbol": "PTT",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "ADVANC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "AOT",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "CPALL",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "GULF",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "KBANK",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SCB",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SCC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BDMS",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "DELTA",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TRUE",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "PTTEP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "PTTGC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BANPU",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BCP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TOP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "IRPC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "GPSC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "OR",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BBL",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "KTB",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TTB",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TISCO",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "KKP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TIDLOR",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "MINT",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "CPN",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "CRC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "HMPRO",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BJC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "MAKRO",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "COM7",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BTS",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BEM",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "AAV",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BA",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BH",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BCH",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "CHG",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "RAM",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "RJH",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BCPG",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "INTUCH",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "DIF",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BTSGIF",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "JASIF",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "IVL",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SCGP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TPIPP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "RATCH",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "EGCO",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "EA",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BGRIM",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SAWAD",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "MTC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "JMT",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TQM",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "AWC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "WHA",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "AMATA",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "LH",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "AP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SIRI",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SPALI",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "ORI",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "ANAN",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TU",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "CBG",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "GFPT",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "CPF",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "KCE",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BEAUTY",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "JMART",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "RS",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "PLANB",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "STGT",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "STEC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TEAM",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "MEGA",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SGP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "CENTEL",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "ERW",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "MOSHI",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TVO",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "THANI",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "NER",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BPP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SSP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "WHAUP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SENA",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "PSH",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "PRIN",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SINGER",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SYNEX",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "FORTH",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TNR",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "OSP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SABINA",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "MC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "MAJOR",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "MONO",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "GGC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "HTC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "ASE",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "STA",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "NRF",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "AEONTS",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "GL",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "THREL",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "STARK",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "VGI",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "JAS",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "PPP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TPBI",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TFG",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "WPH",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SHR",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "CMAN",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "DOD",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "DTAC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TOA",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "DCC",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SAT",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SAPPE",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SNP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TKN",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TCAP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BAM",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "KSL",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "KTIS",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BRRGIF",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "CKP",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SUPER",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "DEMCO",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SPCG",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "GUNKUL",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BLA",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TLI",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "THRE",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "TMB",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "LHFG",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "KIATNAKIN",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "SISB",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "AMARIN",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "NATION",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "THCOM",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "INSET",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "AIT",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "PM",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "RCL",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "WICE",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "BCT",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "GLOBAL",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    },
+    {
+      "symbol": "ITD",
+      "name": "",
+      "market": "SET",
+      "industry": "",
+      "sector": ""
+    }
+  ]
+}

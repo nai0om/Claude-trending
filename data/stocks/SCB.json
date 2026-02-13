@@ -7,14 +7,14 @@
       "date": "2026-02-12",
       "scanned_at": "2026-02-13T00:00:00",
       "price": {
-        "close": 141.50,
+        "close": 141.5,
         "change_pct": 1.43
       },
       "indicators": {
         "rsi": 61.76,
         "macd": 0.7166,
         "macd_signal": 0.2916,
-        "macd_hist": 0.4250,
+        "macd_hist": 0.425,
         "bb_upper": 141.64,
         "bb_middle": 137.65,
         "bb_lower": 133.66
@@ -25,49 +25,51 @@
         "ratio": 1.22
       },
       "levels": {
-        "support": 134.50,
-        "resistance": 141.50
+        "support": 134.5,
+        "resistance": 141.5
       },
       "flags": [],
       "signal": "Neutral-Bullish"
     },
     {
       "date": "2026-02-13",
-      "scanned_at": "2026-02-13T16:30:00",
+      "scanned_at": "2026-02-13T11:34:05.563495",
       "price": {
         "close": 141.5,
         "change_pct": 0.0
       },
       "indicators": {
         "rsi": 72.41,
-        "macd": 0.9046,
-        "macd_signal": 0.4142,
-        "macd_hist": 0.4904,
+        "macd": 0.9201,
+        "macd_signal": 0.4368,
+        "macd_hist": 0.4832,
         "bb_upper": 142.02,
         "bb_middle": 137.75,
         "bb_lower": 133.48
       },
       "volume": {
-        "latest": 6623601,
-        "avg_20d": 15279455,
-        "ratio": 0.43
+        "latest": 7922188,
+        "avg_20d": 15538010,
+        "ratio": 0.51
       },
       "levels": {
-        "support": 134.5,
-        "resistance": 143.0
+        "support": 135.0,
+        "resistance": 141.5
       },
       "sentiment": {
-        "total_mentions": 4207,
+        "total_mentions": 4215,
         "score": 0.31,
         "label": "Bullish",
-        "positive": 1396,
-        "neutral": 2714,
-        "negative": 97,
-        "engagement": 2457444,
+        "positive": 1395,
+        "neutral": 2721,
+        "negative": 99,
+        "engagement": 2458801,
         "confidence": "High"
       },
-      "flags": ["RSI overbought (72.41)"],
-      "signal": "Hold"
+      "flags": [
+        "OVERBOUGHT"
+      ],
+      "signal": "Strong Up + Bullish Sent"
     }
   ],
   "notes": [],

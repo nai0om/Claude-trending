@@ -1,7 +1,44 @@
-Scan the entire watchlist. For each stock in data/watchlist.json:
+Scan the entire SET market + watchlist. This runs Market Discovery first, then the detailed watchlist scan.
 
-## Step 1: Technical Data
-For each stock, fetch price/volume and compute indicators (RSI, MACD, Bollinger Bands).
+---
+
+## Step 0: Market Discovery (SET ทั้งตลาด)
+
+### Step 0a: Ensure SET stock list is fresh
+Run `python scrapers/set_stock_list.py` to download/refresh the full SET stock list.
+This caches to `data/set_all_stocks.json` (auto-refreshes if > 7 days old).
+
+### Step 0b: Screen all SET stocks
+Run `python scrapers/market_screener.py --top 10` to batch-screen all ~600 SET stocks.
+This produces `data/scans/screener_{date}.json` with categories:
+- Top Gainers / Top Losers (1-day price change)
+- Volume Spikes (volume > 3x 20-day average)
+- Oversold (RSI < 30) / Overbought (RSI > 70)
+
+### Step 0c: Find socially trending stocks
+Run `python scrapers/social_trending.py --days 3` to discover trending stocks from social media.
+This produces `data/scans/trending_{date}.json` with:
+- Stocks mentioned most across Pantip, Twitter, Facebook, news
+- Sentiment and engagement per discovered symbol
+- New discoveries not in the watchlist
+
+### Step 0d: Present Market Discovery summary
+
+Present the Market Discovery results in this format:
+
+```
+## Market Discovery (SET ทั้งตลาด)
+| # | Symbol | Sector | Price | Chg% | RSI | Vol Ratio | Signal |
+Top Gainers / Top Losers / Volume Spikes / Oversold / Overbought
+
+## Social Trending (ไม่อยู่ใน Watchlist)
+| # | Symbol | Mentions | Engagement | Sentiment | Signal |
+```
+
+---
+
+## Step 1: Technical Data (Watchlist)
+For each stock in data/watchlist.json, fetch price/volume and compute indicators (RSI, MACD, Bollinger Bands).
 You can do this via yfinance directly in a single Python script for efficiency, or run per-stock:
 1. `python agents/data_collector.py --symbol SYMBOL`
 2. `python agents/technical_agent.py --symbol SYMBOL`
@@ -24,6 +61,13 @@ Flag any stocks with unusual signals:
 
 ## Step 5: Market Analysis
 Provide overall market analysis combining both technical and sentiment data.
+
+## Step 6: Combined Discovery + Watchlist Report
+Cross-reference Market Discovery results with watchlist scan:
+- Flag any **screener discoveries** (top gainers, volume spikes, oversold) that also appear in the watchlist
+- Flag any **socially trending stocks** that overlap with watchlist stocks showing technical signals
+- Highlight **new opportunities**: stocks from the screener/trending that are NOT in the watchlist but show strong combined signals (e.g., oversold + bullish trending, or volume spike + high engagement)
+- Suggest additions to the watchlist if any non-watchlist stock appears in multiple discovery categories
 
 ## Data Persistence (REQUIRED)
 

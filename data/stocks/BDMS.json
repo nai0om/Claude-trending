@@ -7,17 +7,17 @@
       "date": "2026-02-12",
       "scanned_at": "2026-02-13T00:00:00",
       "price": {
-        "close": 21.10,
+        "close": 21.1,
         "change_pct": 0.96
       },
       "indicators": {
-        "rsi": 72.00,
+        "rsi": 72.0,
         "macd": 0.4185,
         "macd_signal": 0.3155,
-        "macd_hist": 0.1030,
+        "macd_hist": 0.103,
         "bb_upper": 21.31,
         "bb_middle": 20.21,
-        "bb_lower": 19.10
+        "bb_lower": 19.1
       },
       "volume": {
         "latest": 62892400,
@@ -25,49 +25,55 @@
         "ratio": 0.79
       },
       "levels": {
-        "support": 18.40,
-        "resistance": 21.40
+        "support": 18.4,
+        "resistance": 21.4
       },
-      "flags": ["RSI overbought (72.00)"],
+      "flags": [
+        "RSI overbought (72.00)"
+      ],
       "signal": "Overbought"
     },
     {
       "date": "2026-02-13",
-      "scanned_at": "2026-02-13T16:30:00",
+      "scanned_at": "2026-02-13T11:34:05.563495",
       "price": {
-        "close": 21.6,
-        "change_pct": 2.37
+        "close": 21.5,
+        "change_pct": 1.9
       },
       "indicators": {
-        "rsi": 75.0,
-        "macd": 0.4742,
-        "macd_signal": 0.3472,
-        "macd_hist": 0.127,
-        "bb_upper": 21.43,
+        "rsi": 74.07,
+        "macd": 0.4628,
+        "macd_signal": 0.3407,
+        "macd_hist": 0.1221,
+        "bb_upper": 21.4,
         "bb_middle": 20.34,
-        "bb_lower": 19.25
+        "bb_lower": 19.27
       },
       "volume": {
-        "latest": 50141545,
-        "avg_20d": 78992522,
-        "ratio": 0.63
+        "latest": 67504398,
+        "avg_20d": 79225165,
+        "ratio": 0.85
       },
       "levels": {
-        "support": 18.90,
-        "resistance": 21.70
+        "support": 19.5,
+        "resistance": 21.5
       },
       "sentiment": {
-        "total_mentions": 782,
+        "total_mentions": 787,
         "score": 0.66,
         "label": "Bullish",
-        "positive": 527,
-        "neutral": 245,
+        "positive": 531,
+        "neutral": 246,
         "negative": 10,
-        "engagement": 298260,
+        "engagement": 298328,
         "confidence": "Medium"
       },
-      "flags": ["RSI overbought (75.0)", "Price above upper BB"],
-      "signal": "Hold — Overbought"
+      "flags": [
+        "OVERBOUGHT",
+        "ABOVE_BB",
+        "BULLISH_SENTIMENT"
+      ],
+      "signal": "Strong Up + BB Breakout + Bullish Sent"
     }
   ],
   "notes": [],

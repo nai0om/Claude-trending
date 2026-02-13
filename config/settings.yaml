@@ -30,6 +30,12 @@ data_retention:
   sentiment_cache_hours: 4
   news_cache_hours: 2
 
+screener:
+  chunk_size: 50
+  period: "3mo"
+  cache_stock_list_days: 7
+  top_n: 10
+
 logging:
   level: "INFO"
   format: "%(asctime)s [%(name)s] %(levelname)s: %(message)s"

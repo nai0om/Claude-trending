@@ -7,8 +7,8 @@
       "date": "2026-02-12",
       "scanned_at": "2026-02-13T00:00:00",
       "price": {
-        "close": 395.00,
-        "change_pct": 2.60
+        "close": 395.0,
+        "change_pct": 2.6
       },
       "indicators": {
         "rsi": 74.44,
@@ -25,49 +25,54 @@
         "ratio": 1.38
       },
       "levels": {
-        "support": 335.00,
-        "resistance": 396.00
+        "support": 335.0,
+        "resistance": 396.0
       },
-      "flags": ["RSI overbought (74.44)", "Price above upper BB"],
+      "flags": [
+        "RSI overbought (74.44)",
+        "Price above upper BB"
+      ],
       "signal": "Overbought"
     },
     {
       "date": "2026-02-13",
-      "scanned_at": "2026-02-13T16:30:00",
+      "scanned_at": "2026-02-13T11:34:05.563495",
       "price": {
-        "close": 395.0,
-        "change_pct": 0.0
+        "close": 393.0,
+        "change_pct": -0.51
       },
       "indicators": {
-        "rsi": 77.91,
-        "macd": 16.2191,
-        "macd_signal": 13.3148,
-        "macd_hist": 2.9044,
-        "bb_upper": 398.10,
-        "bb_middle": 361.90,
-        "bb_lower": 325.70
+        "rsi": 76.14,
+        "macd": 15.9611,
+        "macd_signal": 13.1385,
+        "macd_hist": 2.8226,
+        "bb_upper": 397.63,
+        "bb_middle": 361.8,
+        "bb_lower": 325.97
       },
       "volume": {
-        "latest": 1187555,
-        "avg_20d": 8413612,
-        "ratio": 0.14
+        "latest": 1446118,
+        "avg_20d": 8759515,
+        "ratio": 0.17
       },
       "levels": {
-        "support": 339.0,
-        "resistance": 396.0
+        "support": 340.0,
+        "resistance": 395.0
       },
       "sentiment": {
-        "total_mentions": 13021,
+        "total_mentions": 13073,
         "score": 0.18,
         "label": "Neutral",
-        "positive": 2909,
-        "neutral": 9570,
-        "negative": 542,
-        "engagement": 8332311,
+        "positive": 2926,
+        "neutral": 9602,
+        "negative": 545,
+        "engagement": 8387272,
         "confidence": "High"
       },
-      "flags": ["RSI overbought (77.91)"],
-      "signal": "Hold — Overbought"
+      "flags": [
+        "OVERBOUGHT"
+      ],
+      "signal": "Strong Up"
     }
   ],
   "notes": [],

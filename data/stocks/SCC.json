@@ -7,12 +7,12 @@
       "date": "2026-02-12",
       "scanned_at": "2026-02-13T00:00:00",
       "price": {
-        "close": 221.00,
+        "close": 221.0,
         "change_pct": 1.38
       },
       "indicators": {
         "rsi": 62.22,
-        "macd": 5.4890,
+        "macd": 5.489,
         "macd_signal": 5.0991,
         "macd_hist": 0.3899,
         "bb_upper": 222.57,
@@ -25,49 +25,51 @@
         "ratio": 1.07
       },
       "levels": {
-        "support": 200.00,
-        "resistance": 221.00
+        "support": 200.0,
+        "resistance": 221.0
       },
       "flags": [],
       "signal": "Neutral-Bullish"
     },
     {
       "date": "2026-02-13",
-      "scanned_at": "2026-02-13T16:30:00",
+      "scanned_at": "2026-02-13T11:34:05.563495",
       "price": {
-        "close": 220.0,
-        "change_pct": -0.45
+        "close": 221.0,
+        "change_pct": 0.0
       },
       "indicators": {
-        "rsi": 56.10,
-        "macd": 5.5075,
-        "macd_signal": 5.1808,
-        "macd_hist": 0.3267,
-        "bb_upper": 223.44,
-        "bb_middle": 213.0,
-        "bb_lower": 202.56
+        "rsi": 57.5,
+        "macd": 5.6977,
+        "macd_signal": 5.3587,
+        "macd_hist": 0.339,
+        "bb_upper": 223.64,
+        "bb_middle": 213.05,
+        "bb_lower": 202.46
       },
       "volume": {
-        "latest": 1257720,
-        "avg_20d": 3469911,
-        "ratio": 0.36
+        "latest": 1379115,
+        "avg_20d": 3554240,
+        "ratio": 0.39
       },
       "levels": {
-        "support": 200.0,
-        "resistance": 222.0
+        "support": 203.0,
+        "resistance": 221.0
       },
       "sentiment": {
-        "total_mentions": 1261,
+        "total_mentions": 1270,
         "score": 0.48,
         "label": "Bullish",
-        "positive": 649,
-        "neutral": 566,
+        "positive": 657,
+        "neutral": 567,
         "negative": 46,
-        "engagement": 1787113,
+        "engagement": 1787182,
         "confidence": "High"
       },
-      "flags": [],
-      "signal": "Buy"
+      "flags": [
+        "BULLISH_SENTIMENT"
+      ],
+      "signal": "Bullish Sent"
     }
   ],
   "notes": [],
