@@ -1,0 +1,41 @@
+# Alert trigger thresholds
+
+composite_scoring:
+  weights:
+    technical: 0.25
+    sentiment: 0.20
+    volume: 0.15
+    fundamental: 0.20
+    news: 0.10
+    fund_flow: 0.10
+  range: [-100, 100]
+
+fundamental_sub_weights:
+  profitability: 0.30
+  financial_health: 0.25
+  cash_flow: 0.20
+  valuation: 0.15
+  piotroski: 0.10
+
+buy:
+  composite_min: 60
+  rsi_max: 30
+  sentiment_min: 0.3
+  volume_ratio_min: 2.0
+  fscore_min: 7
+
+sell:
+  composite_max: -60
+  rsi_min: 70
+  sentiment_max: -0.3
+  profit_decline_qoq: true
+
+watch:
+  volume_ratio_min: 1.5
+  social_mention_spike: 3.0
+  intraday_price_move_pct: 3.0
+
+confidence:
+  high_min_sources: 4
+  medium_min_sources: 2
+  low_min_sources: 1

@@ -1,0 +1,15 @@
+{
+  "watchlist": [
+    {"symbol": "PTT", "sector": "Energy", "name": "ปตท."},
+    {"symbol": "ADVANC", "sector": "Technology", "name": "แอดวานซ์ อินโฟร์ เซอร์วิส"},
+    {"symbol": "AOT", "sector": "Transport", "name": "ท่าอากาศยานไทย"},
+    {"symbol": "CPALL", "sector": "Commerce", "name": "ซีพี ออลล์"},
+    {"symbol": "GULF", "sector": "Energy", "name": "กัลฟ์ เอ็นเนอร์จี ดีเวลลอปเมนท์"},
+    {"symbol": "KBANK", "sector": "Banking", "name": "ธนาคารกสิกรไทย"},
+    {"symbol": "SCB", "sector": "Banking", "name": "ธนาคารไทยพาณิชย์"},
+    {"symbol": "SCC", "sector": "Construction", "name": "ปูนซิเมนต์ไทย"},
+    {"symbol": "BDMS", "sector": "Healthcare", "name": "กรุงเทพดุสิตเวชการ"},
+    {"symbol": "DELTA", "sector": "Electronics", "name": "เดลต้า อีเลคโทรนิคส์"}
+  ],
+  "updated_at": "2025-01-01"
+}
