@@ -1,0 +1,37 @@
+{
+  "symbol": "SCC",
+  "name": "ปูนซิเมนต์ไทย",
+  "sector": "Construction",
+  "scans": [
+    {
+      "date": "2026-02-12",
+      "scanned_at": "2026-02-13T00:00:00",
+      "price": {
+        "close": 221.00,
+        "change_pct": 1.38
+      },
+      "indicators": {
+        "rsi": 62.22,
+        "macd": 5.4890,
+        "macd_signal": 5.0991,
+        "macd_hist": 0.3899,
+        "bb_upper": 222.57,
+        "bb_middle": 212.35,
+        "bb_lower": 202.13
+      },
+      "volume": {
+        "latest": 3795400,
+        "avg_20d": 3554240,
+        "ratio": 1.07
+      },
+      "levels": {
+        "support": 200.00,
+        "resistance": 221.00
+      },
+      "flags": [],
+      "signal": "Neutral-Bullish"
+    }
+  ],
+  "notes": [],
+  "alerts": []
+}

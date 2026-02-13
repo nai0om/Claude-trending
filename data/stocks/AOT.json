@@ -1,0 +1,37 @@
+{
+  "symbol": "AOT",
+  "name": "ท่าอากาศยานไทย",
+  "sector": "Transport",
+  "scans": [
+    {
+      "date": "2026-02-12",
+      "scanned_at": "2026-02-13T00:00:00",
+      "price": {
+        "close": 57.00,
+        "change_pct": 0.88
+      },
+      "indicators": {
+        "rsi": 67.80,
+        "macd": 1.3817,
+        "macd_signal": 0.8222,
+        "macd_hist": 0.5595,
+        "bb_upper": 57.66,
+        "bb_middle": 52.98,
+        "bb_lower": 48.29
+      },
+      "volume": {
+        "latest": 37908700,
+        "avg_20d": 34584690,
+        "ratio": 1.10
+      },
+      "levels": {
+        "support": 49.75,
+        "resistance": 59.00
+      },
+      "flags": [],
+      "signal": "Neutral-Bullish"
+    }
+  ],
+  "notes": [],
+  "alerts": []
+}

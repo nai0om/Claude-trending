@@ -18,4 +18,34 @@ Analyze all the financial data and provide:
 
 Compare at least 3 quarters of data to identify trends.
 
+## Data Persistence (REQUIRED)
+
+After analysis, you MUST save results to `data/stocks/{SYMBOL}.json`:
+- READ the existing file first to preserve historical data
+- Add fundamental data to the stock file. If a `fundamental` key doesn't exist, create it:
+  ```json
+  {
+    "fundamental": [
+      {
+        "date": "YYYY-MM-DD",
+        "grade": "A-F",
+        "f_score": 0,
+        "roe": 0.00,
+        "roa": 0.00,
+        "de_ratio": 0.00,
+        "net_margin": 0.00,
+        "revenue_growth_yoy": 0.00,
+        "profit_growth_yoy": 0.00,
+        "summary": "Key findings"
+      }
+    ]
+  }
+  ```
+- Add any notable findings to the `notes` array with format:
+  ```json
+  { "date": "YYYY-MM-DD", "type": "fundamental", "content": "Key findings summary" }
+  ```
+
+IMPORTANT: Always read existing stock files before writing to preserve historical data. Never overwrite — always append.
+
 Remember: ข้อมูลประกอบการตัดสินใจเท่านั้น ไม่ใช่คำแนะนำในการลงทุน

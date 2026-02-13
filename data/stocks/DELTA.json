@@ -1,0 +1,37 @@
+{
+  "symbol": "DELTA",
+  "name": "เดลต้า อีเลคโทรนิคส์",
+  "sector": "Electronics",
+  "scans": [
+    {
+      "date": "2026-02-12",
+      "scanned_at": "2026-02-13T00:00:00",
+      "price": {
+        "close": 224.00,
+        "change_pct": 1.82
+      },
+      "indicators": {
+        "rsi": 67.11,
+        "macd": 10.0262,
+        "macd_signal": 7.7989,
+        "macd_hist": 2.2273,
+        "bb_upper": 234.21,
+        "bb_middle": 200.78,
+        "bb_lower": 167.34
+      },
+      "volume": {
+        "latest": 12715400,
+        "avg_20d": 17708910,
+        "ratio": 0.72
+      },
+      "levels": {
+        "support": 163.50,
+        "resistance": 228.00
+      },
+      "flags": [],
+      "signal": "Bullish"
+    }
+  ],
+  "notes": [],
+  "alerts": []
+}

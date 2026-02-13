@@ -1,0 +1,37 @@
+{
+  "symbol": "KBANK",
+  "name": "ธนาคารกสิกรไทย",
+  "sector": "Banking",
+  "scans": [
+    {
+      "date": "2026-02-12",
+      "scanned_at": "2026-02-13T00:00:00",
+      "price": {
+        "close": 198.50,
+        "change_pct": 2.85
+      },
+      "indicators": {
+        "rsi": 66.04,
+        "macd": 0.8472,
+        "macd_signal": -0.0022,
+        "macd_hist": 0.8495,
+        "bb_upper": 196.69,
+        "bb_middle": 190.82,
+        "bb_lower": 184.96
+      },
+      "volume": {
+        "latest": 24674800,
+        "avg_20d": 16879145,
+        "ratio": 1.46
+      },
+      "levels": {
+        "support": 187.00,
+        "resistance": 198.50
+      },
+      "flags": ["Price above upper BB", "Volume 1.46x average"],
+      "signal": "Bullish"
+    }
+  ],
+  "notes": [],
+  "alerts": []
+}

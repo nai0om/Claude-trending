@@ -1,0 +1,37 @@
+{
+  "symbol": "GULF",
+  "name": "กัลฟ์ เอ็นเนอร์จี ดีเวลลอปเมนท์",
+  "sector": "Energy",
+  "scans": [
+    {
+      "date": "2026-02-12",
+      "scanned_at": "2026-02-13T00:00:00",
+      "price": {
+        "close": 58.50,
+        "change_pct": 4.46
+      },
+      "indicators": {
+        "rsi": 89.83,
+        "macd": 3.1039,
+        "macd_signal": 2.1278,
+        "macd_hist": 0.9761,
+        "bb_upper": 56.49,
+        "bb_middle": 48.92,
+        "bb_lower": 41.36
+      },
+      "volume": {
+        "latest": 55925500,
+        "avg_20d": 46823135,
+        "ratio": 1.19
+      },
+      "levels": {
+        "support": 43.00,
+        "resistance": 58.50
+      },
+      "flags": ["RSI extreme overbought (89.83)", "Price above upper BB", "+4.46% intraday"],
+      "signal": "Extreme Overbought"
+    }
+  ],
+  "notes": [],
+  "alerts": []
+}

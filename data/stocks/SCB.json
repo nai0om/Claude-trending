@@ -1,0 +1,37 @@
+{
+  "symbol": "SCB",
+  "name": "ธนาคารไทยพาณิชย์",
+  "sector": "Banking",
+  "scans": [
+    {
+      "date": "2026-02-12",
+      "scanned_at": "2026-02-13T00:00:00",
+      "price": {
+        "close": 141.50,
+        "change_pct": 1.43
+      },
+      "indicators": {
+        "rsi": 61.76,
+        "macd": 0.7166,
+        "macd_signal": 0.2916,
+        "macd_hist": 0.4250,
+        "bb_upper": 141.64,
+        "bb_middle": 137.65,
+        "bb_lower": 133.66
+      },
+      "volume": {
+        "latest": 19030500,
+        "avg_20d": 15538010,
+        "ratio": 1.22
+      },
+      "levels": {
+        "support": 134.50,
+        "resistance": 141.50
+      },
+      "flags": [],
+      "signal": "Neutral-Bullish"
+    }
+  ],
+  "notes": [],
+  "alerts": []
+}

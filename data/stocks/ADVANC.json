@@ -1,0 +1,37 @@
+{
+  "symbol": "ADVANC",
+  "name": "แอดวานซ์ อินโฟร์ เซอร์วิส",
+  "sector": "Technology",
+  "scans": [
+    {
+      "date": "2026-02-12",
+      "scanned_at": "2026-02-13T00:00:00",
+      "price": {
+        "close": 395.00,
+        "change_pct": 2.60
+      },
+      "indicators": {
+        "rsi": 74.44,
+        "macd": 15.4986,
+        "macd_signal": 12.5887,
+        "macd_hist": 2.9099,
+        "bb_upper": 392.92,
+        "bb_middle": 359.25,
+        "bb_lower": 325.58
+      },
+      "volume": {
+        "latest": 12045100,
+        "avg_20d": 8759515,
+        "ratio": 1.38
+      },
+      "levels": {
+        "support": 335.00,
+        "resistance": 396.00
+      },
+      "flags": ["RSI overbought (74.44)", "Price above upper BB"],
+      "signal": "Overbought"
+    }
+  ],
+  "notes": [],
+  "alerts": []
+}

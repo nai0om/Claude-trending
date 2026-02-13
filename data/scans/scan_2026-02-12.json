@@ -1,0 +1,27 @@
+{
+  "scan_date": "2026-02-12",
+  "scanned_at": "2026-02-13T00:00:00",
+  "market_sentiment": "Bullish but overheated",
+  "stocks_scanned": 10,
+  "overbought_count": 5,
+  "oversold_count": 0,
+  "all_macd_bullish": true,
+  "summary": [
+    {"symbol": "PTT",    "close": 36.00,  "rsi": 76.47,  "macd_signal": "Bullish", "vol_ratio": 1.80, "signal": "Overbought + High Volume"},
+    {"symbol": "ADVANC", "close": 395.00, "rsi": 74.44,  "macd_signal": "Bullish", "vol_ratio": 1.38, "signal": "Overbought"},
+    {"symbol": "AOT",    "close": 57.00,  "rsi": 67.80,  "macd_signal": "Bullish", "vol_ratio": 1.10, "signal": "Neutral-Bullish"},
+    {"symbol": "CPALL",  "close": 49.50,  "rsi": 100.00, "macd_signal": "Bullish", "vol_ratio": 0.80, "signal": "Extreme Overbought"},
+    {"symbol": "GULF",   "close": 58.50,  "rsi": 89.83,  "macd_signal": "Bullish", "vol_ratio": 1.19, "signal": "Extreme Overbought"},
+    {"symbol": "KBANK",  "close": 198.50, "rsi": 66.04,  "macd_signal": "Bullish", "vol_ratio": 1.46, "signal": "Bullish"},
+    {"symbol": "SCB",    "close": 141.50, "rsi": 61.76,  "macd_signal": "Bullish", "vol_ratio": 1.22, "signal": "Neutral-Bullish"},
+    {"symbol": "SCC",    "close": 221.00, "rsi": 62.22,  "macd_signal": "Bullish", "vol_ratio": 1.07, "signal": "Neutral-Bullish"},
+    {"symbol": "BDMS",   "close": 21.10,  "rsi": 72.00,  "macd_signal": "Bullish", "vol_ratio": 0.79, "signal": "Overbought"},
+    {"symbol": "DELTA",  "close": 224.00, "rsi": 67.11,  "macd_signal": "Bullish", "vol_ratio": 0.72, "signal": "Bullish"}
+  ],
+  "flagged": {
+    "overbought": ["CPALL", "GULF", "PTT", "ADVANC", "BDMS"],
+    "oversold": [],
+    "high_volume": ["PTT"],
+    "price_breakout": ["GULF", "ADVANC", "CPALL", "KBANK"]
+  }
+}
