@@ -6,6 +6,8 @@ Run full analysis on all watchlist stocks and create an action plan:
    - Run `python agents/data_collector.py --symbol SYMBOL` — latest price/volume
    - Run `python agents/technical_agent.py --symbol SYMBOL` — technical signals
 2. Run `python agents/action_plan_agent.py --budget 100000` — generate action plan
+3. Run `python analysis/risk_manager.py report` — risk checks on current portfolio
+4. Run `python analysis/risk_manager.py snapshot` — record daily snapshot
 
 Analyze all results and provide:
 
@@ -19,6 +21,10 @@ Analyze all results and provide:
 - จำนวนซื้อ: X ตัว (฿xxx)
 - จำนวนขาย: X ตัว
 - จำนวนถือ: X ตัว
+
+**Risk Alerts**:
+- List any risk warnings from the action plan (daily loss halt, position limits, sector concentration)
+- If no warnings: "All risk checks passed"
 
 **ความเห็น**: Your analysis of today's market conditions and why you recommend these actions.
 

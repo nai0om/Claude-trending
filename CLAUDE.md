@@ -121,6 +121,9 @@ Calculated in `analysis/financial_health.py`. Score >= 7 is strong, <= 3 is weak
 - `/fundamental SYMBOL` — deep financial statement analysis (8 quarters, F-Score, valuation, grade A-F)
 - `/sentiment` — market-wide sentiment overview
 - `/history` — alert history (last 7 days)
+- `/risk` — portfolio risk dashboard (heat, stop-losses, sector concentration, deployment %)
+- `/journal` — trade journal (open trades, win rate, strategy performance)
+- `/challenge SYMBOL` — consultant/devil's advocate that challenges your thesis on a stock
 
 ## Important Constraints
 

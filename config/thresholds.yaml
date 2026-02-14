@@ -39,3 +39,12 @@ confidence:
   high_min_sources: 4
   medium_min_sources: 2
   low_min_sources: 1
+
+risk_management:
+  max_position_pct: 0.15
+  total_deployment_cap: 0.50
+  stop_loss_pct: -0.15
+  daily_loss_halt_pct: -0.05
+  max_sector_pct: 0.40
+  portfolio_heat_high: 0.15
+  portfolio_heat_medium: 0.08

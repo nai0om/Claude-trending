@@ -36,6 +36,10 @@ screener:
   cache_stock_list_days: 7
   top_n: 10
 
+trade_journal:
+  default_strategy: "composite"
+  auto_record: true
+
 logging:
   level: "INFO"
   format: "%(asctime)s [%(name)s] %(levelname)s: %(message)s"

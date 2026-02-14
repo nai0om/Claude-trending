@@ -1,4 +1,4 @@
-"""Portfolio Agent — tracks cash balance, holdings, P&L, and transaction history."""
+"""Portfolio Agent — tracks cash balance, holdings, P&L, and transaction history with risk & journal integration."""
 
 import argparse
 import json
@@ -8,6 +8,26 @@ from datetime import datetime
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
+
+# Lazy imports for risk and journal integration
+_risk_manager = None
+_trade_journal = None
+
+
+def _get_risk_manager():
+    global _risk_manager
+    if _risk_manager is None:
+        from analysis import risk_manager
+        _risk_manager = risk_manager
+    return _risk_manager
+
+
+def _get_trade_journal():
+    global _trade_journal
+    if _trade_journal is None:
+        from analysis import trade_journal
+        _trade_journal = trade_journal
+    return _trade_journal
 
 DB_PATH = Path(__file__).parent.parent / "data" / "portfolio.db"
 
@@ -87,7 +107,7 @@ def get_portfolio_status() -> dict:
     cash = portfolio["cash_balance"]
     total_value = cash + total_market_value
 
-    return {
+    result = {
         "as_of": datetime.now().isoformat(),
         "cash_balance": round(cash, 2),
         "total_market_value": round(total_market_value, 2),
@@ -96,6 +116,20 @@ def get_portfolio_status() -> dict:
         "holdings": holdings_list,
         "recent_transactions": [dict(t) for t in recent_txns],
     }
+
+    # Add stop-loss alerts and risk summary
+    try:
+        rm = _get_risk_manager()
+        stop_losses = rm.check_stop_losses()
+        triggered = [s for s in stop_losses if s.get("triggered")]
+        if triggered:
+            result["stop_loss_alerts"] = triggered
+        deployment_pct = total_market_value / total_value if total_value > 0 else 0
+        result["deployment_pct"] = round(deployment_pct, 4)
+    except Exception as e:
+        logger.debug("Risk check skipped: %s", e)
+
+    return result
 
 
 def record_transaction(symbol: str, action: str, amount_thb: float, price: float) -> dict:
@@ -156,6 +190,27 @@ def record_transaction(symbol: str, action: str, amount_thb: float, price: float
 
     conn.commit()
     conn.close()
+
+    # Auto-record in trade journal
+    try:
+        tj = _get_trade_journal()
+        if action == "BUY":
+            tj.open_trade(
+                symbol=symbol,
+                action=action,
+                price=price,
+                shares=shares,
+                amount=amount_thb,
+                reasoning="Recorded via portfolio agent",
+            )
+        elif action == "SELL":
+            tj.close_trade(
+                symbol=symbol,
+                exit_price=price,
+                outcome="Closed via portfolio agent",
+            )
+    except Exception as e:
+        logger.debug("Trade journal auto-record skipped: %s", e)
 
     return {
         "symbol": symbol,

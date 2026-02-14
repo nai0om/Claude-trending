@@ -1,4 +1,4 @@
-"""Action Plan Agent — generates daily BUY/SELL/HOLD recommendations with position sizing."""
+"""Action Plan Agent — generates daily BUY/SELL/HOLD recommendations with position sizing and risk checks."""
 
 import argparse
 import json
@@ -7,6 +7,17 @@ from datetime import datetime
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
+
+# Risk management imports (lazy to avoid circular deps)
+_risk_manager = None
+
+
+def _get_risk_manager():
+    global _risk_manager
+    if _risk_manager is None:
+        from analysis import risk_manager
+        _risk_manager = risk_manager
+    return _risk_manager
 
 
 def generate_action_plan(budget: float = 100000.0) -> dict:
@@ -24,8 +35,16 @@ def generate_action_plan(budget: float = 100000.0) -> dict:
     from agents.orchestrator import load_watchlist, analyze_single
     from analysis.position_sizing import calculate_position_size
 
+    rm = _get_risk_manager()
     watchlist = load_watchlist()
     actions = []
+    risk_warnings = []
+
+    # Check daily loss halt before processing any BUY
+    daily_halt = rm.check_daily_loss_halt()
+    halt_active = daily_halt.get("halt_active", False)
+    if halt_active:
+        risk_warnings.append(daily_halt["message"])
 
     for stock in watchlist:
         symbol = stock["symbol"]
@@ -45,12 +64,38 @@ def generate_action_plan(budget: float = 100000.0) -> dict:
 
             # Calculate position size for BUY signals
             amount = 0.0
+            action_risk_warnings = []
+
             if action == "BUY":
-                amount = calculate_position_size(
-                    budget=budget,
-                    conviction_score=score,
-                    current_price=analysis.get("technical", {}).get("close", 0),
-                )
+                # Override to HOLD if daily loss halt is active
+                if halt_active:
+                    action = "HOLD"
+                    action_risk_warnings.append("Daily loss halt active — BUY overridden to HOLD")
+                else:
+                    amount = calculate_position_size(
+                        budget=budget,
+                        conviction_score=score,
+                        current_price=analysis.get("technical", {}).get("close", 0),
+                    )
+                    # Check position limits
+                    if amount > 0:
+                        limit_check = rm.check_position_limits(symbol, amount)
+                        if not limit_check["allowed"]:
+                            action_risk_warnings.extend(limit_check["warnings"])
+                            if limit_check["allowed_amount"] > 0:
+                                amount = limit_check["allowed_amount"]
+                                action_risk_warnings.append(
+                                    f"Amount reduced to {amount:,.0f} THB due to position limits"
+                                )
+                            else:
+                                action = "HOLD"
+                                amount = 0.0
+                                action_risk_warnings.append("BUY blocked — position limits exceeded")
+
+            reasoning = _build_reasoning(analysis)
+            if action_risk_warnings:
+                reasoning += " | RISK: " + "; ".join(action_risk_warnings)
+                risk_warnings.extend(action_risk_warnings)
 
             actions.append({
                 "symbol": symbol,
@@ -59,7 +104,7 @@ def generate_action_plan(budget: float = 100000.0) -> dict:
                 "action": action,
                 "composite_score": score,
                 "amount_thb": round(amount, 2),
-                "reasoning": _build_reasoning(analysis),
+                "reasoning": reasoning,
             })
         except Exception as e:
             logger.error("Failed to analyze %s: %s", symbol, e)
@@ -76,6 +121,7 @@ def generate_action_plan(budget: float = 100000.0) -> dict:
         "budget": budget,
         "actions": actions,
         "summary": _summarize(actions),
+        "risk_warnings": risk_warnings,
     }
 
 
