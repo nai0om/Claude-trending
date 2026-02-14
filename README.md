@@ -13,8 +13,11 @@ You (via Claude Code)
   ├── /analyze PTT       → Deep analysis on one stock
   ├── /fundamental PTT   → Financial statement deep dive
   ├── /sentiment         → Market-wide sentiment check
-  ├── /action_plan       → Daily BUY/SELL/HOLD plan
-  ├── /portfolio         → Track your portfolio & P&L
+  ├── /action_plan       → Daily BUY/SELL/HOLD plan (with risk checks)
+  ├── /portfolio         → Track your portfolio, risk & P&L
+  ├── /risk              → Portfolio risk dashboard
+  ├── /journal           → Trade journal & win rate
+  ├── /challenge PTT     → Devil's advocate challenge
   └── /history           → Review past alerts
         │
         ▼
@@ -60,8 +63,12 @@ Open the project in Claude Code and use slash commands:
 /fundamental KBANK       # Financial deep dive on KBANK
 /sentiment               # What's the market mood?
 /action_plan             # Today's BUY/SELL/HOLD recommendations
-/portfolio               # Check your portfolio
+/portfolio               # Check your portfolio, risk & journal
 /portfolio ซื้อ PTT 5000  # Record a purchase
+/risk                    # Portfolio risk dashboard
+/journal                 # Trade journal & win rate stats
+/journal close KBANK 250 # Close a trade at price 250
+/challenge KBANK         # Devil's advocate on KBANK
 /history                 # Review past alerts
 ```
 
@@ -80,13 +87,37 @@ Fetches 8 quarters from SEC API, computes Piotroski F-Score (0-9), financial rat
 Scrapes Pantip's Sinthorn room for stock discussions. Identifies most-discussed stocks, overall mood, trending topics, and contrarian signals.
 
 ### `/action_plan` — Daily Action Plan
-Analyzes all watchlist stocks and generates a table of BUY/SELL/HOLD recommendations with suggested amounts based on conviction scores and position sizing.
+Analyzes all watchlist stocks and generates a table of BUY/SELL/HOLD recommendations with suggested amounts based on conviction scores and position sizing. Includes **risk checks** — BUY signals are automatically blocked or reduced if position limits, deployment caps, or daily loss halt thresholds are violated.
 
 ### `/portfolio` — Portfolio Tracker
-Track cash balance, stock holdings, P&L, and transaction history. Record buys/sells in Thai or English:
-- `/portfolio` or `/portfolio status` — show current portfolio
-- `/portfolio ซื้อ PTT 5000` — record buying PTT for 5,000 THB
+Track cash balance, stock holdings, P&L, and transaction history. Now includes risk summary and trade journal stats. Record buys/sells in Thai or English:
+- `/portfolio` or `/portfolio status` — show portfolio + risk + journal
+- `/portfolio ซื้อ PTT 5000` — record buying PTT for 5,000 THB (auto-validates risk limits)
 - `/portfolio sell ADVANC 3000` — record selling ADVANC for 3,000 THB
+
+### `/risk` — Risk Dashboard
+Portfolio-wide risk monitoring:
+- **Portfolio Heat** — sum of (position weight x 20-day volatility). LOW / MEDIUM / HIGH
+- **Stop-Loss Alerts** — flags holdings down -15% or more vs avg cost
+- **Daily Loss Halt** — if portfolio drops -5% intraday, all BUY orders blocked
+- **Position Limits** — max 15% per stock, 50% total deployment cap
+- **Sector Concentration** — max 40% in any one sector
+
+### `/journal` — Trade Journal
+Track every trade with reasoning, outcome, and lessons learned:
+- `/journal` — open trades, win rate, strategy performance
+- `/journal close KBANK 250` — close a trade at exit price, record outcome
+- `/journal history` — full trade history
+
+Performance metrics: win rate, avg win/loss, profit factor, Kelly fraction (optimal bet size).
+
+### `/challenge SYMBOL` — Consultant / Devil's Advocate
+An independent challenge agent that tests your thesis on a stock:
+- Runs full analysis + risk checks + trade journal history
+- Produces **bear case** (if you're bullish) or **bull case** (if you're bearish)
+- Identifies blind spots, data gaps, sector/correlation risks
+- Checks past trades on the same symbol for historical patterns
+- Delivers a risk-adjusted verdict: **AGREE**, **DISAGREE**, or **MODIFY**
 
 ### `/history` — Alert History
 Shows past alerts from the last 7 days with performance tracking.
@@ -116,7 +147,19 @@ python3 analysis/financial_health.py --symbol PTT
 python3 agents/portfolio_agent.py status
 python3 agents/portfolio_agent.py buy --symbol PTT --amount 5000 --price 35.50
 
-# Action plan
+# Risk management
+python3 analysis/risk_manager.py report           # Full risk dashboard
+python3 analysis/risk_manager.py stop-losses       # Check stop-loss alerts
+python3 analysis/risk_manager.py check-buy --symbol PTT --amount 30000  # Validate a BUY
+python3 analysis/risk_manager.py snapshot          # Record daily portfolio snapshot
+
+# Trade journal
+python3 analysis/trade_journal.py status           # Open trades
+python3 analysis/trade_journal.py winrate          # Win rate & performance stats
+python3 analysis/trade_journal.py strategies       # Performance by strategy
+python3 analysis/trade_journal.py history          # Closed trade history
+
+# Action plan (now includes risk checks)
 python3 agents/action_plan_agent.py --budget 100000
 
 # Auto-scheduler (runs every 30 min during market hours)
@@ -153,7 +196,9 @@ Claude-trending/
 │   ├── fundamental.py         # Financial ratios, grading
 │   ├── financial_health.py    # Piotroski F-Score (0-9)
 │   ├── scoring.py             # Composite score (-100 to +100)
-│   └── position_sizing.py     # Position sizing logic
+│   ├── position_sizing.py     # Position sizing logic
+│   ├── risk_manager.py        # Portfolio risk checks & limits
+│   └── trade_journal.py       # Trade journal & win rate tracking
 ├── alerts/                    # Notification delivery
 │   ├── line_notify.py         # LINE Notify API
 │   ├── telegram_bot.py        # Telegram Bot API
@@ -212,6 +257,32 @@ Edit `data/watchlist.json` to track different stocks.
 ### Piotroski F-Score (0-9)
 
 9 binary criteria covering profitability, capital structure, and efficiency. Score >= 7 is strong, <= 3 is weak.
+
+## Risk Management
+
+Built-in risk rules that automatically enforce portfolio discipline:
+
+| Rule | Threshold | Action |
+|------|-----------|--------|
+| Max position size | 15% of portfolio per stock | BUY amount reduced or blocked |
+| Deployment cap | 50% of portfolio in stocks | New BUY orders blocked |
+| Stop-loss | -15% from avg cost | Alert triggered |
+| Daily loss halt | -5% portfolio drop intraday | All BUY orders halted |
+| Sector concentration | 40% max in one sector | Warning displayed |
+| Portfolio heat | Weighted volatility exposure | LOW / MEDIUM / HIGH indicator |
+
+Risk checks run automatically when generating action plans (`/action_plan`) and recording portfolio transactions (`/portfolio buy`). Use `/risk` for a full dashboard.
+
+## Trade Journal
+
+Every trade is automatically recorded with entry/exit data, reasoning, and outcome. The journal tracks:
+
+- **Win rate** — percentage of profitable trades
+- **Profit factor** — gross profit / gross loss
+- **Kelly fraction** — optimal position size based on historical performance
+- **Strategy breakdown** — performance by strategy type
+
+Use `/journal` to view stats or `/journal close SYMBOL PRICE` to close a trade with lessons learned.
 
 ## Disclaimer
 
