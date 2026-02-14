@@ -1,5 +1,7 @@
 """SEC API Client — REST client for SEC API Portal (api-portal.sec.or.th)."""
 
+from __future__ import annotations
+
 import argparse
 import json
 import logging

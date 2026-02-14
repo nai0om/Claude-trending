@@ -1,5 +1,7 @@
 """Pantip Scraper — scrapes ห้องสินธร (Sinthorn room) for stock sentiment."""
 
+from __future__ import annotations
+
 import argparse
 import json
 import logging

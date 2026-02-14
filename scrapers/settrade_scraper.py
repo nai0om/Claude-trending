@@ -1,5 +1,7 @@
 """Settrade Scraper — Playwright-based scraper for settrade.com stock data."""
 
+from __future__ import annotations
+
 import argparse
 import json
 import logging
