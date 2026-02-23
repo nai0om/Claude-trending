@@ -1,0 +1,140 @@
+{
+  "scan_date": "2026-02-16",
+  "scanned_at": "2026-02-16T08:35:21.382652",
+  "market_sentiment": "Broadly overbought — 6/10 watchlist stocks have RSI > 70. All 10 have bullish MACD. Market is extended.",
+  "stocks_scanned": 10,
+  "overbought_count": 6,
+  "oversold_count": 0,
+  "all_macd_bullish": true,
+  "summary": [
+    {
+      "symbol": "PTT",
+      "close": 35.75,
+      "rsi": 76.5,
+      "macd_signal": "bullish",
+      "vol_ratio": 1.02,
+      "mentions": 0,
+      "sentiment_score": 0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH | RSI overbought"
+    },
+    {
+      "symbol": "ADVANC",
+      "close": 389.0,
+      "rsi": 72.8,
+      "macd_signal": "bullish",
+      "vol_ratio": 0.61,
+      "mentions": 0,
+      "sentiment_score": 0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH | RSI overbought"
+    },
+    {
+      "symbol": "AOT",
+      "close": 57.5,
+      "rsi": 71.2,
+      "macd_signal": "bullish",
+      "vol_ratio": 1.49,
+      "mentions": 0,
+      "sentiment_score": 0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH | RSI overbought"
+    },
+    {
+      "symbol": "CPALL",
+      "close": 49.25,
+      "rsi": 96.4,
+      "macd_signal": "bullish",
+      "vol_ratio": 0.76,
+      "mentions": 0,
+      "sentiment_score": 0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH | RSI overbought"
+    },
+    {
+      "symbol": "GULF",
+      "close": 59.25,
+      "rsi": 91.8,
+      "macd_signal": "bullish",
+      "vol_ratio": 1.25,
+      "mentions": 0,
+      "sentiment_score": 0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH | RSI overbought, At upper BB"
+    },
+    {
+      "symbol": "KBANK",
+      "close": 195.5,
+      "rsi": 59.3,
+      "macd_signal": "bullish",
+      "vol_ratio": 1.28,
+      "mentions": 0,
+      "sentiment_score": 0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH"
+    },
+    {
+      "symbol": "SCB",
+      "close": 141.0,
+      "rsi": 70.0,
+      "macd_signal": "bullish",
+      "vol_ratio": 0.82,
+      "mentions": 0,
+      "sentiment_score": 0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH"
+    },
+    {
+      "symbol": "SCC",
+      "close": 221.0,
+      "rsi": 57.5,
+      "macd_signal": "bullish",
+      "vol_ratio": 1.73,
+      "mentions": 0,
+      "sentiment_score": 0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH | Elevated volume (1.7x)"
+    },
+    {
+      "symbol": "BDMS",
+      "close": 21.3,
+      "rsi": 72.0,
+      "macd_signal": "bullish",
+      "vol_ratio": 1.55,
+      "mentions": 0,
+      "sentiment_score": 0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH | RSI overbought, Elevated volume (1.6x)"
+    },
+    {
+      "symbol": "DELTA",
+      "close": 216.0,
+      "rsi": 64.6,
+      "macd_signal": "bullish",
+      "vol_ratio": 0.6,
+      "mentions": 0,
+      "sentiment_score": 0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH"
+    }
+  ],
+  "flagged": {
+    "overbought": [
+      "PTT",
+      "ADVANC",
+      "AOT",
+      "CPALL",
+      "GULF",
+      "BDMS"
+    ],
+    "oversold": [],
+    "high_volume": [
+      "SCC",
+      "BDMS"
+    ],
+    "price_breakout": [],
+    "sentiment_bearish": [],
+    "sentiment_bullish": [],
+    "mention_spike": []
+  }
+}

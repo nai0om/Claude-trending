@@ -14,6 +14,11 @@ This produces `data/scans/screener_{date}.json` with categories:
 - Top Gainers / Top Losers (1-day price change)
 - Volume Spikes (volume > 3x 20-day average)
 - Oversold (RSI < 30) / Overbought (RSI > 70)
+- **Early Signals** (potential setups before price moves):
+  - ACCUMULATION: Volume 1.5-3x + RSI 40-60 (smart money entering quietly)
+  - MACD_FRESH_CROSS: Histogram just crossed from negative to positive (momentum shift)
+  - BB_SQUEEZE: Bollinger Band width at narrowest in 20 days (imminent breakout)
+  - VOLUME_BUILDUP: Volume rising 3+ consecutive days + price in lower half of range (pre-breakout accumulation)
 
 ### Step 0c: Find socially trending stocks
 Run `python scrapers/social_trending.py --days 3` to discover trending stocks from social media.
@@ -30,6 +35,14 @@ Present the Market Discovery results in this format:
 ## Market Discovery (SET ทั้งตลาด)
 | # | Symbol | Sector | Price | Chg% | RSI | Vol Ratio | Signal |
 Top Gainers / Top Losers / Volume Spikes / Oversold / Overbought
+
+## Early Signals (Potential Setups — จับก่อนราคาวิ่ง)
+| # | Symbol | Sector | Price | RSI | Vol Ratio | Early Signals | Strength |
+These are PRE-MOVE signals. The stock hasn't broken out yet — monitor for confirmation.
+Multi-signal combinations are especially interesting:
+- BB Squeeze + Volume Buildup = imminent breakout, watch for direction
+- Accumulation + MACD Fresh Cross = momentum building, likely upside
+- BB Squeeze + MACD Fresh Cross = strong setup, consider adding to watchlist
 
 ## Social Trending (ไม่อยู่ใน Watchlist)
 | # | Symbol | Mentions | Engagement | Sentiment | Signal |
@@ -58,6 +71,11 @@ Flag any stocks with unusual signals:
 - **Technical**: RSI < 30 or > 70, volume > 2x average, price outside Bollinger Bands
 - **Social**: Mention spike > 2x normal, negative sentiment > 20%, extreme positive > 50%
 - **Combined**: Technical overbought + bearish sentiment = potential reversal warning
+- **Early Signal Combos** (high priority):
+  - BB Squeeze + Volume Buildup = imminent breakout (monitor direction closely)
+  - Accumulation + MACD Fresh Cross = momentum building with smart money (likely bullish)
+  - BB Squeeze + MACD Fresh Cross = strong bullish setup
+  - Any early signal stock also trending on social media = potential catalyst convergence
 
 ## Step 5: Market Analysis
 Provide overall market analysis combining both technical and sentiment data.
@@ -68,6 +86,8 @@ Cross-reference Market Discovery results with watchlist scan:
 - Flag any **socially trending stocks** that overlap with watchlist stocks showing technical signals
 - Highlight **new opportunities**: stocks from the screener/trending that are NOT in the watchlist but show strong combined signals (e.g., oversold + bullish trending, or volume spike + high engagement)
 - Suggest additions to the watchlist if any non-watchlist stock appears in multiple discovery categories
+- **Cross-reference early signals with social trending**: stocks showing early technical signals (accumulation, BB squeeze, etc.) that are also socially trending are high-priority discoveries — the technical setup may be catalyzed by incoming social attention
+- **Early signal stocks in watchlist**: flag any watchlist stock that has early signals — these may develop into actionable BUY signals within 1-5 days
 
 ## Data Persistence (REQUIRED)
 

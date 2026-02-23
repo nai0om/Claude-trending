@@ -1,0 +1,142 @@
+{
+  "scan_date": "2026-02-17",
+  "scanned_at": "2026-02-17T21:11:53.855615",
+  "market_sentiment": "Broad bullish momentum — all 10 watchlist stocks show MACD bullish crossover. 7/10 overbought (RSI>70). Banking sector leading with breakouts above Bollinger Bands.",
+  "stocks_scanned": 10,
+  "overbought_count": 7,
+  "oversold_count": 0,
+  "all_macd_bullish": true,
+  "summary": [
+    {
+      "symbol": "PTT",
+      "close": 35.75,
+      "rsi": 73.5,
+      "macd_signal": "BULLISH",
+      "vol_ratio": 0.8,
+      "mentions": 0,
+      "sentiment_score": 0.0,
+      "sentiment_label": "N/A",
+      "signal": "OVERBOUGHT - WATCH"
+    },
+    {
+      "symbol": "ADVANC",
+      "close": 391.0,
+      "rsi": 71.3,
+      "macd_signal": "BULLISH",
+      "vol_ratio": 0.43,
+      "mentions": 0,
+      "sentiment_score": 0.0,
+      "sentiment_label": "N/A",
+      "signal": "OVERBOUGHT - WATCH"
+    },
+    {
+      "symbol": "AOT",
+      "close": 56.25,
+      "rsi": 60.5,
+      "macd_signal": "BULLISH",
+      "vol_ratio": 1.05,
+      "mentions": 0,
+      "sentiment_score": 0.0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH"
+    },
+    {
+      "symbol": "CPALL",
+      "close": 50.75,
+      "rsi": 82.6,
+      "macd_signal": "BULLISH",
+      "vol_ratio": 1.0,
+      "mentions": 0,
+      "sentiment_score": 0.0,
+      "sentiment_label": "N/A",
+      "signal": "OVERBOUGHT - WATCH"
+    },
+    {
+      "symbol": "GULF",
+      "close": 61.25,
+      "rsi": 92.0,
+      "macd_signal": "BULLISH",
+      "vol_ratio": 1.2,
+      "mentions": 0,
+      "sentiment_score": 0.0,
+      "sentiment_label": "N/A",
+      "signal": "OVERBOUGHT - WATCH"
+    },
+    {
+      "symbol": "KBANK",
+      "close": 206.0,
+      "rsi": 71.0,
+      "macd_signal": "BULLISH",
+      "vol_ratio": 1.3,
+      "mentions": 0,
+      "sentiment_score": 0.0,
+      "sentiment_label": "N/A",
+      "signal": "OVERBOUGHT - WATCH"
+    },
+    {
+      "symbol": "SCB",
+      "close": 146.0,
+      "rsi": 72.5,
+      "macd_signal": "BULLISH",
+      "vol_ratio": 1.57,
+      "mentions": 0,
+      "sentiment_score": 0.0,
+      "sentiment_label": "N/A",
+      "signal": "OVERBOUGHT - WATCH"
+    },
+    {
+      "symbol": "SCC",
+      "close": 221.0,
+      "rsi": 65.5,
+      "macd_signal": "BULLISH",
+      "vol_ratio": 0.71,
+      "mentions": 0,
+      "sentiment_score": 0.0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH"
+    },
+    {
+      "symbol": "BDMS",
+      "close": 21.8,
+      "rsi": 73.9,
+      "macd_signal": "BULLISH",
+      "vol_ratio": 0.5,
+      "mentions": 0,
+      "sentiment_score": 0.0,
+      "sentiment_label": "N/A",
+      "signal": "OVERBOUGHT - WATCH"
+    },
+    {
+      "symbol": "DELTA",
+      "close": 225.0,
+      "rsi": 65.2,
+      "macd_signal": "BULLISH",
+      "vol_ratio": 0.53,
+      "mentions": 0,
+      "sentiment_score": 0.0,
+      "sentiment_label": "N/A",
+      "signal": "BULLISH"
+    }
+  ],
+  "flagged": {
+    "overbought": [
+      "PTT",
+      "ADVANC",
+      "CPALL",
+      "GULF",
+      "KBANK",
+      "SCB",
+      "BDMS"
+    ],
+    "oversold": [],
+    "high_volume": [],
+    "price_breakout": [
+      "KBANK",
+      "SCB",
+      "BDMS"
+    ],
+    "sentiment_bearish": [],
+    "sentiment_bullish": [],
+    "mention_spike": []
+  }
+}

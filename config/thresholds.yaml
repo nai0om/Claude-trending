@@ -40,6 +40,23 @@ confidence:
   medium_min_sources: 2
   low_min_sources: 1
 
+early_signals:
+  accumulation:
+    rsi_low: 40
+    rsi_high: 60
+    volume_min: 1.5
+    volume_max: 3.0
+  macd_fresh_cross:
+    lookback_bars: 2
+  bb_squeeze:
+    bb_length: 20
+    bb_std: 2.0
+    squeeze_lookback: 20
+  volume_buildup:
+    consecutive_days: 3
+    range_lookback: 20
+    max_range_position: 0.5
+
 risk_management:
   max_position_pct: 0.15
   total_deployment_cap: 0.50

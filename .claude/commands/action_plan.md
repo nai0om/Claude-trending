@@ -38,6 +38,20 @@ Show the component scores: Technical, Sentiment, Fundamental, News, Volume, Fund
 **BUY Signal Challenges** (for any BUY recommendations):
 For each BUY signal, briefly note 1-2 counter-arguments or blind spots. This is a mini-challenge — if the user wants a full devil's advocate, they should run `/challenge SYMBOL`.
 
+**Early Signal Watchlist** (สัญญาณเริ่มต้น — ยังไม่ถึงจุดซื้อ):
+Cross-reference the screener's `early_signals` category from the latest `data/scans/screener_{date}.json`. If early signal data is available, present:
+
+| หุ้น | สัญญาณ | Strength | จับตา |
+|------|--------|----------|-------|
+| SYMBOL | ACCUMULATION, BB_SQUEEZE, etc. | ##(50%) | What to watch for next |
+
+For each early signal stock:
+- Note what confirmation would upgrade it to a BUY (e.g., "needs breakout above resistance" or "wait for MACD cross")
+- If 2+ early signals on the same stock, flag it as "High Priority Watch"
+- If the stock also has bullish social sentiment, note the convergence
+
+These are stocks to MONITOR, not act on yet. They may develop into BUY signals in 1-5 days.
+
 **ความเห็น**: Your analysis of today's market conditions and why you recommend these actions. Note any data gaps that reduce confidence.
 
 Remember: ข้อมูลประกอบการตัดสินใจเท่านั้น ไม่ใช่คำแนะนำในการลงทุน

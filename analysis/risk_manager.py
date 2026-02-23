@@ -61,6 +61,7 @@ def _init_snapshots():
 
 def _get_portfolio_data() -> dict:
     """Get current portfolio holdings and cash."""
+    _ensure_stop_loss_column()
     conn = _get_conn()
     portfolio = conn.execute("SELECT * FROM portfolio WHERE id = 1").fetchone()
     holdings = conn.execute("SELECT * FROM holdings WHERE shares > 0").fetchall()
@@ -178,13 +179,73 @@ def check_position_limits(symbol: str, amount: float) -> dict:
     }
 
 
+def _ensure_stop_loss_column():
+    """Add stop_loss_price column to holdings if it doesn't exist."""
+    conn = _get_conn()
+    try:
+        conn.execute("SELECT stop_loss_price FROM holdings LIMIT 1")
+    except sqlite3.OperationalError:
+        conn.execute("ALTER TABLE holdings ADD COLUMN stop_loss_price REAL DEFAULT NULL")
+        conn.commit()
+    conn.close()
+
+
+def set_stop_loss(symbol: str, price: float) -> dict:
+    """Set a per-stock stop-loss price for a holding.
+
+    Args:
+        symbol: Stock symbol.
+        price: Stop-loss trigger price (absolute). Set to 0 to clear.
+
+    Returns:
+        Dict with confirmation details.
+    """
+    _ensure_stop_loss_column()
+    conn = _get_conn()
+    holding = conn.execute(
+        "SELECT * FROM holdings WHERE symbol = ? AND shares > 0", (symbol,)
+    ).fetchone()
+
+    if not holding:
+        conn.close()
+        return {"error": f"No open position for {symbol}"}
+
+    stop_price = price if price > 0 else None
+    conn.execute(
+        "UPDATE holdings SET stop_loss_price = ?, updated_at = ? WHERE symbol = ?",
+        (stop_price, datetime.now().isoformat(), symbol),
+    )
+    conn.commit()
+    conn.close()
+
+    current = _get_current_price(symbol) or holding["avg_cost"]
+    distance_pct = (current - price) / current if current > 0 and price > 0 else None
+
+    return {
+        "symbol": symbol,
+        "stop_loss_price": stop_price,
+        "avg_cost": holding["avg_cost"],
+        "current_price": round(current, 2),
+        "distance_from_current": f"{distance_pct:.1%}" if distance_pct is not None else None,
+        "message": (
+            f"Stop-loss set: {symbol} at ฿{price:,.2f}"
+            if stop_price
+            else f"Stop-loss cleared for {symbol}"
+        ),
+    }
+
+
 def check_stop_losses() -> list[dict]:
     """Check all holdings for stop-loss violations.
 
-    Returns list of holdings that have hit the stop-loss threshold.
+    Uses per-stock stop-loss price if set, otherwise falls back to
+    global stop_loss_pct from config.
+
+    Returns list of holdings with stop-loss status.
     """
+    _ensure_stop_loss_column()
     cfg = _load_config()
-    stop_pct = cfg["stop_loss_pct"]
+    global_stop_pct = cfg["stop_loss_pct"]
     data = _get_portfolio_data()
     alerts = []
 
@@ -196,6 +257,8 @@ def check_stop_losses() -> list[dict]:
         pnl_pct = (current - h["avg_cost"]) / h["avg_cost"] if h["avg_cost"] > 0 else 0
         market_value = h["shares"] * current
 
+        custom_stop = h.get("stop_loss_price")
+
         entry = {
             "symbol": h["symbol"],
             "shares": h["shares"],
@@ -203,19 +266,40 @@ def check_stop_losses() -> list[dict]:
             "current_price": round(current, 2),
             "pnl_pct": round(pnl_pct, 4),
             "market_value": round(market_value, 2),
-            "stop_loss_threshold": stop_pct,
         }
 
-        if pnl_pct <= stop_pct:
-            entry["triggered"] = True
-            entry["message"] = (
-                f"STOP-LOSS: {h['symbol']} at {pnl_pct:.1%} "
-                f"(threshold {stop_pct:.0%})"
-            )
+        if custom_stop and custom_stop > 0:
+            # Per-stock stop-loss (absolute price)
+            entry["stop_loss_price"] = custom_stop
+            entry["stop_type"] = "custom"
+            triggered = current <= custom_stop
+            distance = (current - custom_stop) / current if current > 0 else 0
+
+            if triggered:
+                entry["triggered"] = True
+                entry["message"] = (
+                    f"STOP-LOSS TRIGGERED: {h['symbol']} at ฿{current:,.2f} "
+                    f"<= stop ฿{custom_stop:,.2f}"
+                )
+            else:
+                entry["triggered"] = False
+                entry["distance_to_stop"] = round(distance, 4)
+                entry["distance_to_stop_thb"] = round(current - custom_stop, 2)
         else:
-            entry["triggered"] = False
-            distance = pnl_pct - stop_pct
-            entry["distance_to_stop"] = round(distance, 4)
+            # Global percentage stop-loss
+            entry["stop_loss_threshold"] = global_stop_pct
+            entry["stop_type"] = "global_pct"
+
+            if pnl_pct <= global_stop_pct:
+                entry["triggered"] = True
+                entry["message"] = (
+                    f"STOP-LOSS: {h['symbol']} at {pnl_pct:.1%} "
+                    f"(threshold {global_stop_pct:.0%})"
+                )
+            else:
+                entry["triggered"] = False
+                distance = pnl_pct - global_stop_pct
+                entry["distance_to_stop"] = round(distance, 4)
 
         alerts.append(entry)
 
@@ -464,6 +548,10 @@ def main():
     buy_check.add_argument("--symbol", required=True)
     buy_check.add_argument("--amount", type=float, required=True, help="Amount in THB")
 
+    stop_set = sub.add_parser("set-stop", help="Set per-stock stop-loss price")
+    stop_set.add_argument("--symbol", required=True)
+    stop_set.add_argument("--price", type=float, required=True, help="Stop-loss price (0 to clear)")
+
     args = parser.parse_args()
 
     logging.basicConfig(
@@ -482,6 +570,9 @@ def main():
         print(json.dumps(result, default=str, ensure_ascii=False, indent=2))
     elif args.command == "check-buy":
         result = check_position_limits(args.symbol, args.amount)
+        print(json.dumps(result, default=str, ensure_ascii=False, indent=2))
+    elif args.command == "set-stop":
+        result = set_stop_loss(args.symbol, args.price)
         print(json.dumps(result, default=str, ensure_ascii=False, indent=2))
     else:
         parser.print_help()

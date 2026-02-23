@@ -68,6 +68,166 @@
       },
       "flags": [],
       "signal": "Neutral"
+    },
+    {
+      "date": "2026-02-16",
+      "scanned_at": "2026-02-16T08:35:21.382652",
+      "price": {
+        "close": 216.0,
+        "change_pct": -3.57
+      },
+      "indicators": {
+        "rsi": 64.6,
+        "macd": 1.559,
+        "macd_signal": 1.559,
+        "macd_hist": 1.559,
+        "bb_upper": 233.24,
+        "bb_middle": 203.22,
+        "bb_lower": 173.21
+      },
+      "volume": {
+        "latest": 10327400,
+        "avg_20d": 17153900,
+        "ratio": 0.6
+      },
+      "levels": {
+        "support": 168.0,
+        "resistance": 224.0
+      },
+      "sentiment": {
+        "total_mentions": 0,
+        "score": 0,
+        "label": "N/A (API offline)",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0,
+        "engagement": 0,
+        "confidence": "Low"
+      },
+      "flags": [],
+      "signal": "BULLISH"
+    },
+    {
+      "date": "2026-02-17",
+      "scanned_at": "2026-02-17T21:11:53.855615",
+      "price": {
+        "close": 225.0,
+        "change_pct": 1.81
+      },
+      "indicators": {
+        "rsi": 65.2,
+        "macd": 10.0298,
+        "macd_signal": 8.7564,
+        "macd_hist": 1.2734,
+        "bb_upper": 229.79,
+        "bb_middle": 208.55,
+        "bb_lower": 187.31
+      },
+      "volume": {
+        "latest": 8688933,
+        "avg_20d": 16388576,
+        "ratio": 0.53
+      },
+      "levels": {
+        "support": 173.5,
+        "resistance": 228.0
+      },
+      "sentiment": {
+        "total_mentions": 0,
+        "score": 0.0,
+        "label": "N/A",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0,
+        "engagement": 0,
+        "confidence": "Low"
+      },
+      "flags": [
+        "MACD_BULLISH"
+      ],
+      "signal": "BULLISH"
+    },
+    {
+      "date": "2026-02-20",
+      "scanned_at": "2026-02-20T22:11:23.385766",
+      "price": {
+        "close": 234.0,
+        "change_pct": -0.85
+      },
+      "indicators": {
+        "rsi": 72.37,
+        "macd": 11.2549,
+        "macd_signal": 9.7294,
+        "macd_hist": 1.5255,
+        "bb_upper": 236.82,
+        "bb_middle": 214.35,
+        "bb_lower": 191.88
+      },
+      "volume": {
+        "latest": 10991459,
+        "avg_20d": 14988455,
+        "ratio": 0.73
+      },
+      "levels": {
+        "support": 193.0,
+        "resistance": 236.0
+      },
+      "sentiment": {
+        "total_mentions": 13004,
+        "score": 0.17,
+        "label": "Neutral",
+        "positive": 3051,
+        "neutral": 9100,
+        "negative": 853,
+        "engagement": 105656077,
+        "confidence": "High"
+      },
+      "flags": [
+        "OVERBOUGHT",
+        "MACD_BULLISH"
+      ],
+      "signal": "OVERBOUGHT - WATCH"
+    },
+    {
+      "date": "2026-02-23",
+      "scanned_at": "2026-02-23T09:11:15.715523",
+      "price": {
+        "close": 234.0,
+        "change_pct": -0.85
+      },
+      "indicators": {
+        "rsi": 72.37,
+        "macd": 11.2549,
+        "macd_signal": 9.7294,
+        "macd_hist": 1.5255,
+        "bb_upper": 236.82,
+        "bb_middle": 214.35,
+        "bb_lower": 191.88
+      },
+      "volume": {
+        "latest": 10991459,
+        "avg_20d": 14988455,
+        "ratio": 0.73
+      },
+      "levels": {
+        "support": 193.0,
+        "resistance": 236.0
+      },
+      "sentiment": {
+        "total_mentions": 12280,
+        "score": 0.16,
+        "label": "Neutral",
+        "positive": 2815,
+        "neutral": 8613,
+        "negative": 852,
+        "engagement": 122444163,
+        "confidence": "High"
+      },
+      "flags": [
+        "OVERBOUGHT",
+        "MACD_BULLISH"
+      ],
+      "signal": "OVERBOUGHT - WATCH"
     }
   ],
   "notes": [],

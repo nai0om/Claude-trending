@@ -70,6 +70,168 @@
         "OVERBOUGHT"
       ],
       "signal": "Strong Up + Bullish Sent"
+    },
+    {
+      "date": "2026-02-16",
+      "scanned_at": "2026-02-16T08:35:21.382652",
+      "price": {
+        "close": 57.5,
+        "change_pct": 0.88
+      },
+      "indicators": {
+        "rsi": 71.2,
+        "macd": 0.5585,
+        "macd_signal": 0.5585,
+        "macd_hist": 0.5585,
+        "bb_upper": 58.32,
+        "bb_middle": 53.24,
+        "bb_lower": 48.15
+      },
+      "volume": {
+        "latest": 52878200,
+        "avg_20d": 35556090,
+        "ratio": 1.49
+      },
+      "levels": {
+        "support": 50.25,
+        "resistance": 58.25
+      },
+      "sentiment": {
+        "total_mentions": 0,
+        "score": 0,
+        "label": "N/A (API offline)",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0,
+        "engagement": 0,
+        "confidence": "Low"
+      },
+      "flags": [
+        "RSI overbought"
+      ],
+      "signal": "BULLISH | RSI overbought"
+    },
+    {
+      "date": "2026-02-17",
+      "scanned_at": "2026-02-17T21:11:53.855615",
+      "price": {
+        "close": 56.25,
+        "change_pct": 0.0
+      },
+      "indicators": {
+        "rsi": 60.5,
+        "macd": 1.4833,
+        "macd_signal": 1.1492,
+        "macd_hist": 0.3341,
+        "bb_upper": 58.83,
+        "bb_middle": 53.62,
+        "bb_lower": 48.42
+      },
+      "volume": {
+        "latest": 39927930,
+        "avg_20d": 37929696,
+        "ratio": 1.05
+      },
+      "levels": {
+        "support": 49.75,
+        "resistance": 59.0
+      },
+      "sentiment": {
+        "total_mentions": 0,
+        "score": 0.0,
+        "label": "N/A",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0,
+        "engagement": 0,
+        "confidence": "Low"
+      },
+      "flags": [
+        "MACD_BULLISH"
+      ],
+      "signal": "BULLISH"
+    },
+    {
+      "date": "2026-02-20",
+      "scanned_at": "2026-02-20T22:11:23.385766",
+      "price": {
+        "close": 56.5,
+        "change_pct": 0.44
+      },
+      "indicators": {
+        "rsi": 70.37,
+        "macd": 1.3868,
+        "macd_signal": 1.274,
+        "macd_hist": 0.1128,
+        "bb_upper": 59.81,
+        "bb_middle": 54.26,
+        "bb_lower": 48.72
+      },
+      "volume": {
+        "latest": 18684716,
+        "avg_20d": 38255680,
+        "ratio": 0.49
+      },
+      "levels": {
+        "support": 50.25,
+        "resistance": 58.25
+      },
+      "sentiment": {
+        "total_mentions": 7984,
+        "score": 0.46,
+        "label": "Bullish",
+        "positive": 3942,
+        "neutral": 3745,
+        "negative": 297,
+        "engagement": 14220740,
+        "confidence": "High"
+      },
+      "flags": [
+        "OVERBOUGHT",
+        "MACD_BULLISH"
+      ],
+      "signal": "OVERBOUGHT - WATCH"
+    },
+    {
+      "date": "2026-02-23",
+      "scanned_at": "2026-02-23T09:11:15.715523",
+      "price": {
+        "close": 56.5,
+        "change_pct": 0.44
+      },
+      "indicators": {
+        "rsi": 70.37,
+        "macd": 1.3868,
+        "macd_signal": 1.274,
+        "macd_hist": 0.1128,
+        "bb_upper": 59.81,
+        "bb_middle": 54.26,
+        "bb_lower": 48.72
+      },
+      "volume": {
+        "latest": 18684716,
+        "avg_20d": 38255680,
+        "ratio": 0.49
+      },
+      "levels": {
+        "support": 50.25,
+        "resistance": 58.25
+      },
+      "sentiment": {
+        "total_mentions": 7421,
+        "score": 0.44,
+        "label": "Bullish",
+        "positive": 3539,
+        "neutral": 3592,
+        "negative": 290,
+        "engagement": 13664936,
+        "confidence": "High"
+      },
+      "flags": [
+        "OVERBOUGHT",
+        "MACD_BULLISH"
+      ],
+      "signal": "OVERBOUGHT - WATCH"
     }
   ],
   "notes": [],

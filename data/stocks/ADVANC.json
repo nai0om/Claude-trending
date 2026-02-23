@@ -73,6 +73,167 @@
         "OVERBOUGHT"
       ],
       "signal": "Strong Up"
+    },
+    {
+      "date": "2026-02-16",
+      "scanned_at": "2026-02-16T08:35:21.382652",
+      "price": {
+        "close": 389.0,
+        "change_pct": -1.52
+      },
+      "indicators": {
+        "rsi": 72.8,
+        "macd": 2.5221,
+        "macd_signal": 2.5221,
+        "macd_hist": 2.5221,
+        "bb_upper": 396.73,
+        "bb_middle": 361.6,
+        "bb_lower": 326.47
+      },
+      "volume": {
+        "latest": 5259000,
+        "avg_20d": 8617185,
+        "ratio": 0.61
+      },
+      "levels": {
+        "support": 340.0,
+        "resistance": 395.0
+      },
+      "sentiment": {
+        "total_mentions": 0,
+        "score": 0,
+        "label": "N/A (API offline)",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0,
+        "engagement": 0,
+        "confidence": "Low"
+      },
+      "flags": [
+        "RSI overbought"
+      ],
+      "signal": "BULLISH | RSI overbought"
+    },
+    {
+      "date": "2026-02-17",
+      "scanned_at": "2026-02-17T21:11:53.855615",
+      "price": {
+        "close": 391.0,
+        "change_pct": 0.26
+      },
+      "indicators": {
+        "rsi": 71.3,
+        "macd": 15.7361,
+        "macd_signal": 14.0593,
+        "macd_hist": 1.6769,
+        "bb_upper": 401.74,
+        "bb_middle": 366.55,
+        "bb_lower": 331.36
+      },
+      "volume": {
+        "latest": 3672218,
+        "avg_20d": 8516555,
+        "ratio": 0.43
+      },
+      "levels": {
+        "support": 341.0,
+        "resistance": 396.0
+      },
+      "sentiment": {
+        "total_mentions": 0,
+        "score": 0.0,
+        "label": "N/A",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0,
+        "engagement": 0,
+        "confidence": "Low"
+      },
+      "flags": [
+        "OVERBOUGHT",
+        "MACD_BULLISH"
+      ],
+      "signal": "OVERBOUGHT - WATCH"
+    },
+    {
+      "date": "2026-02-20",
+      "scanned_at": "2026-02-20T22:11:23.385766",
+      "price": {
+        "close": 386.0,
+        "change_pct": -1.03
+      },
+      "indicators": {
+        "rsi": 66.67,
+        "macd": 14.2085,
+        "macd_signal": 14.3985,
+        "macd_hist": -0.19,
+        "bb_upper": 407.52,
+        "bb_middle": 372.65,
+        "bb_lower": 337.78
+      },
+      "volume": {
+        "latest": 8767140,
+        "avg_20d": 8511985,
+        "ratio": 1.03
+      },
+      "levels": {
+        "support": 347.0,
+        "resistance": 395.0
+      },
+      "sentiment": {
+        "total_mentions": 11100,
+        "score": 0.22,
+        "label": "Neutral",
+        "positive": 2969,
+        "neutral": 7581,
+        "negative": 550,
+        "engagement": 31260396,
+        "confidence": "High"
+      },
+      "flags": [
+        "MACD_BEARISH"
+      ],
+      "signal": "HOLD"
+    },
+    {
+      "date": "2026-02-23",
+      "scanned_at": "2026-02-23T09:11:15.715523",
+      "price": {
+        "close": 386.0,
+        "change_pct": -1.03
+      },
+      "indicators": {
+        "rsi": 66.67,
+        "macd": 14.2085,
+        "macd_signal": 14.3985,
+        "macd_hist": -0.19,
+        "bb_upper": 407.52,
+        "bb_middle": 372.65,
+        "bb_lower": 337.78
+      },
+      "volume": {
+        "latest": 8767140,
+        "avg_20d": 8511985,
+        "ratio": 1.03
+      },
+      "levels": {
+        "support": 347.0,
+        "resistance": 395.0
+      },
+      "sentiment": {
+        "total_mentions": 10059,
+        "score": 0.22,
+        "label": "Neutral",
+        "positive": 2685,
+        "neutral": 6925,
+        "negative": 449,
+        "engagement": 43015007,
+        "confidence": "High"
+      },
+      "flags": [
+        "MACD_BEARISH"
+      ],
+      "signal": "HOLD"
     }
   ],
   "notes": [],
