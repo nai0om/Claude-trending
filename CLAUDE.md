@@ -14,7 +14,7 @@ AI-powered trading alert agent for Thai stocks (SET). Claude Code serves as the 
 - **Stock Data**: yfinance (`.BK` suffix for SET tickers, e.g., `PTT.BK`)
 - **Technical Analysis**: pandas-ta (RSI, MACD, Bollinger Bands)
 - **Thai NLP**: WangchanBERTa / PyThaiNLP for sentiment analysis
-- **Financial Data**: SEC API Portal (free, requires API key from api-portal.sec.or.th)
+- **Financial Data**: SEC Open Data API (free, register at secopendata.sec.or.th, API base: api.sec.or.th)
 - **Database**: SQLite for alerts history, sentiment cache, financial data
 - **Alerts**: LINE Notify + Telegram Bot
 - **Scheduler**: APScheduler / cron (every 30 min, Mon-Fri 9:30-16:30)
