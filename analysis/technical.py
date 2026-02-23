@@ -1,32 +1,44 @@
 """Technical indicator calculations — pure computation, no I/O."""
 
 import pandas as pd
-import pandas_ta as ta
+from ta.momentum import RSIIndicator
+from ta.trend import MACD, SMAIndicator, EMAIndicator
+from ta.volatility import BollingerBands
 
 
 def compute_rsi(close: pd.Series, length: int = 14) -> pd.Series:
     """Compute Relative Strength Index."""
-    return ta.rsi(close, length=length)
+    return RSIIndicator(close, window=length).rsi()
 
 
 def compute_macd(close: pd.Series, fast: int = 12, slow: int = 26, signal: int = 9) -> pd.DataFrame:
     """Compute MACD (line, signal, histogram)."""
-    return ta.macd(close, fast=fast, slow=slow, signal=signal)
+    macd = MACD(close, window_slow=slow, window_fast=fast, window_sign=signal)
+    return pd.DataFrame({
+        f"MACD_{fast}_{slow}_{signal}": macd.macd(),
+        f"MACDs_{fast}_{slow}_{signal}": macd.macd_signal(),
+        f"MACDh_{fast}_{slow}_{signal}": macd.macd_diff(),
+    })
 
 
 def compute_bollinger_bands(close: pd.Series, length: int = 20, std: float = 2.0) -> pd.DataFrame:
     """Compute Bollinger Bands (upper, middle, lower)."""
-    return ta.bbands(close, length=length, std=std)
+    bb = BollingerBands(close, window=length, window_dev=std)
+    return pd.DataFrame({
+        f"BBU_{length}_{std}": bb.bollinger_hband(),
+        f"BBM_{length}_{std}": bb.bollinger_mavg(),
+        f"BBL_{length}_{std}": bb.bollinger_lband(),
+    })
 
 
 def compute_sma(close: pd.Series, length: int = 50) -> pd.Series:
     """Compute Simple Moving Average."""
-    return ta.sma(close, length=length)
+    return SMAIndicator(close, window=length).sma_indicator()
 
 
 def compute_ema(close: pd.Series, length: int = 20) -> pd.Series:
     """Compute Exponential Moving Average."""
-    return ta.ema(close, length=length)
+    return EMAIndicator(close, window=length).ema_indicator()
 
 
 def find_support_resistance(df: pd.DataFrame, lookback: int = 20) -> dict:

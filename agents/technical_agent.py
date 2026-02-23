@@ -1,4 +1,4 @@
-"""Technical Analysis Agent — computes RSI, MACD, Bollinger Bands via pandas-ta."""
+"""Technical Analysis Agent — computes RSI, MACD, Bollinger Bands via ta library."""
 
 import argparse
 import json
@@ -6,7 +6,9 @@ import logging
 from datetime import datetime
 
 import pandas as pd
-import pandas_ta as ta
+from ta.momentum import RSIIndicator
+from ta.trend import MACD
+from ta.volatility import BollingerBands
 import yfinance as yf
 
 logger = logging.getLogger(__name__)
@@ -31,15 +33,19 @@ def compute_indicators(symbol: str, period: str = "6mo") -> dict:
         return {"symbol": symbol, "error": "No data available"}
 
     # RSI (14-period)
-    df["RSI"] = ta.rsi(df["Close"], length=14)
+    df["RSI"] = RSIIndicator(df["Close"], window=14).rsi()
 
     # MACD (12, 26, 9)
-    macd = ta.macd(df["Close"], fast=12, slow=26, signal=9)
-    df = pd.concat([df, macd], axis=1)
+    macd_ind = MACD(df["Close"], window_slow=26, window_fast=12, window_sign=9)
+    df["MACD_12_26_9"] = macd_ind.macd()
+    df["MACDs_12_26_9"] = macd_ind.macd_signal()
+    df["MACDh_12_26_9"] = macd_ind.macd_diff()
 
     # Bollinger Bands (20, 2)
-    bbands = ta.bbands(df["Close"], length=20, std=2)
-    df = pd.concat([df, bbands], axis=1)
+    bb = BollingerBands(df["Close"], window=20, window_dev=2)
+    df["BBU_20_2.0"] = bb.bollinger_hband()
+    df["BBM_20_2.0"] = bb.bollinger_mavg()
+    df["BBL_20_2.0"] = bb.bollinger_lband()
 
     latest = df.iloc[-1]
     close = float(latest["Close"])
